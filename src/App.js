@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -15,7 +15,7 @@ import PokemonProfile from "./components/pokemon/PokemonProfile";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/" element={<Navigate to="/pokemon" />} />
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/pokemon" element={<PokemonList />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
