@@ -1,0 +1,42 @@
+$dark-1: #1A5F7A;
+$dark-2: #086E7D;
+$yellow: #FFC900;
+$light : #f1a97082;
+
+html {
+  padding: 0;
+  margin : 0;
+}
+
+body {
+  font-family: system-ui;
+}
+
+.search-box {
+  &:focus-visible {
+    outline: none !important;
+  }
+}
+
+header,
+footer,
+.progress-bar {
+  background-color: $dark-1;
+}
+
+.pokemon-card {
+  background-color: $light;
+}
+
+.btn,
+button {
+  background-color: $dark-1;
+  color           : white;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-2;
+    color           : white
+  }
+
+}
