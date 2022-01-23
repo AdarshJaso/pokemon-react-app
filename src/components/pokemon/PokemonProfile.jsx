@@ -1,23 +1,23 @@
 import React from 'react'
+import {useParams} from 'react-router-dom'
 import Description from "./Description"
 import EvolutionChain from './EvolutionChain'
 import Moves from "./Moves"
 
 const PokemonProfile = () => {
-    var currentUrl = window.location.href;
-    var splitUrl = currentUrl.split("pokemon/")
-    var pokemonUrlIndex = splitUrl[1];
+
+    const { pokeIndex } = useParams();
 
     return (
-        <div className="container" key={pokemonUrlIndex}>
+        <div className="container" key={pokeIndex}>
         {
-            (pokemonUrlIndex !== "") ? (
+            (pokeIndex !== "") ? (
                 <div> 
-                    <Description descURL={pokemonUrlIndex} />
+                    <Description descURL={pokeIndex} />
                     <hr/>
-                    <Moves movesURL={pokemonUrlIndex} />
+                    <Moves movesURL={pokeIndex} />
                     <hr/>
-                    <EvolutionChain evURL={pokemonUrlIndex} />
+                    <EvolutionChain evURL={pokeIndex} />
                 </div>
             ) : (
                 <h5 className="text-info">Please wait until the pokemons load...</h5>
